@@ -73,9 +73,8 @@ async def main_convertor_handler(
 
     # A dictionary which contains the methods to be called.
     METHODS = {
-        "mdisk": mdisk_api_handler,
-        "shortener": replace_link,
-        "mdlink": mdisk_droplink_convertor,
+       "shortener": replace_link,
+        
     }
 
     # Replacing the username with your username.
@@ -104,7 +103,7 @@ async def main_convertor_handler(
                 fileid = InputMediaPhoto(banner_image, caption=shortenedText)
 
     if message.text:
-        if user_method in ["shortener", "mdlink"] and "|" in caption:
+        if user_method in ["shortener"] and "|" in caption:
             regex = r"(?i)\b((?:https?://|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()\[\]{};:'\".,<>?«»“”‘’]))\s\|\s([a-zA-Z0-9_]){,30}"
             if custom_alias := re.match(regex, caption):
                 custom_alias = custom_alias[0].split("|")
@@ -179,10 +178,6 @@ async def create_inline_keyboard_markup(message: Message, method_func, user):
         return InlineKeyboardMarkup(buttons)
 
 
-async def mdisk_api_handler(user, text, alias=""):
-    api_key = user["mdisk_api"]
-    mdisk = Mdisk(api_key)
-    return await mdisk.convert_from_text(text)
 
 
 async def replace_link(user, text, alias=""):
@@ -217,10 +212,7 @@ async def replace_link(user, text, alias=""):
     return text
 
 
-async def mdisk_droplink_convertor(user, text, alias=""):
-    links = await mdisk_api_handler(user, text)
-    links = await replace_link(user, links, alias=alias)
-    return links
+
 
 
 async def replace_username(text, username):
@@ -256,9 +248,7 @@ async def bypass_func(url):
     return c_link
 
 
-async def is_droplink_url(url):
-    domain = urlparse(url).netloc
-    return url if "droplink.co" in domain else False
+
 
 
 async def broadcast_admins(c: Client, Message, sender=False):
@@ -382,15 +372,12 @@ async def set_commands(app):
         BotCommand("start", "Used to start the bot."),
         BotCommand("help", "Displays the help command."),
         BotCommand("about", "Displays information about the bot."),
-        BotCommand("method", "Sets your preferred method."),
-        BotCommand("shortener_api", "Sets the shortener API."),
-        BotCommand("mdisk_api", "Sets the mDisk API."),
+        BotCommand("shortener_api", "Sets the shortener API."),       
         BotCommand("header", "Sets the header."),
         BotCommand("footer", "Sets the footer."),
         BotCommand("username", "Sets the username to replace others."),
         BotCommand("banner_image", "Sets the banner image."),
         BotCommand("me", "Displays information about the bot."),
-        BotCommand("base_site", "Changes the base site."),
         BotCommand("include_domain", "Sets the included domain."),
         BotCommand("exclude_domain", "Sets the excluded domain."),
         BotCommand("stats", "Displays statistics of the server and bot."),
