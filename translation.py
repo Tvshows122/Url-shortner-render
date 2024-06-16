@@ -80,7 +80,7 @@ Here is a list of the channels:
 {channels}"""
 
 
-HELP_REPLY_MARKUP = InlineKeyboardMarkp(
+HELP_REPLY_MARKUP = InlineKeyboardMarkup(
     [
         [
             InlineKeyboardButton("Methods", callback_data="method_command"),
