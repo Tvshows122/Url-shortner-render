@@ -6,7 +6,7 @@ else
   echo "Cloning Custom Repo from $SOURCE_CODE "
   git clone $SOURCE_CODE /URL-Shortener
 fi
-cd /URL-Shortener-V2
+cd /URL-Shortener
 pip3 install -U -r requirements.txt
 echo "Starting Bot...."
 python3 main.py
