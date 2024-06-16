@@ -48,24 +48,16 @@ ABOUT_TEXT = """
     
 `📝 Language:` [Python 3](https://www.python.org/)
 `🧰 Framework:` [Pyrogram](https://github.com/pyrogram/pyrogram)
-`👨‍💻 Developer:` [Dev](t.me/ask_admin001)
-`📢 Support:` [Talk Bot](https://t.me/ask_admin001)
-`🌐 Source Code:` [GitHub](https://github.com/kevinnadar22/URL-Shortener-V2/)
+`👨‍💻 Developer:` INFINITY
 """
 
 
 METHOD_MESSAGE = """
 Current Method: {method}
     
-Methods Available:
 
-> `mdlink` - Change all the links of the post to your MDisk account first and then short to {shortener} link.
-
-> `shortener` - Short all the links of the post to {shortener} link directly.
-
-> `mdisk` - Save all the links of the post to your Mdisk account.
+> `shortener` - Short all the links of the post to {shortener} link directly
     
-To change method, choose it from the following options:
 """
 
 CUSTOM_ALIAS_MESSAGE = """For custom alias, `[link] | [custom_alias]`, Send in this format
@@ -88,7 +80,7 @@ Here is a list of the channels:
 {channels}"""
 
 
-HELP_REPLY_MARKUP = InlineKeyboardMarkup(
+HELP_REPLY_MARKUP = InlineKeyboardMarkp(
     [
         [
             InlineKeyboardButton("Methods", callback_data="method_command"),
@@ -132,13 +124,10 @@ START_MESSAGE_REPLY_MARKUP = InlineKeyboardMarkup(
 METHOD_REPLY_MARKUP = InlineKeyboardMarkup(
     [
         [
-            InlineKeyboardButton(
-                "MDLINK", callback_data="change_method#mdlink"
-            ),
+            
             InlineKeyboardButton(
                 "Shortener", callback_data="change_method#shortener"
-            ),
-            InlineKeyboardButton("Mdisk", callback_data="change_method#mdisk"),
+            )
         ],
         [
             InlineKeyboardButton("Back", callback_data="help_command"),
@@ -160,7 +149,6 @@ USER_ABOUT_MESSAGE = """
 
 - 🔌 {base_site} API: {shortener_api}
 
-- 💾 Mdisk API: {mdisk_api}
 
 - 📎 Username: @{username}
 
@@ -174,15 +162,7 @@ USER_ABOUT_MESSAGE = """
 """
 
 
-MDISK_API_MESSAGE = """To add or update your Mdisk API, \n`/mdisk_api mdisk_api`
-            
-Ex: `/mdisk_api 6LZq851sXoPHugiKQq`
-            
-Others Mdisk Links will be automatically changed to the API of this Mdisk account
-
-Get your Mdisk API from @VideoToolMoneyTreebot
-
-Current Mdisk API: `{}`"""
+MDISK_API_MESSAGE = """ """
 
 SHORTENER_API_MESSAGE = """To add or update your Shortner Website API, 
 `/shortener_api [api]`
