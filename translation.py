@@ -17,18 +17,23 @@ START_MESSAGE = """I am bmlinks.com , Bulk Link Converter. I Can Convert Links D
 🤗 Than Hit Start If You're Redirected To Bot.
 Other Ways👇
 2. Than Copy API Key
-3. Than Type /api than give a single space and than paste your API Key (see example to understand more...)
+3. Than Type /shortener_api than give a single space and than paste your API Key (see example to understand more...)
 
-/api<space>API Key 
+/shortener_api [API Key]
 (See Example.👇)
 Example:
-/api ba1d11dd859451cf34cf026861f9debc181019d2 
+/shortener_api e5ec20a239f6ed2dffe32f03caf61f95a37c4eeb 
 
-🤘 Hit 👉 /features To Know More Features Of This Bot.
-🔗 Hit 👉 /link To Know More About How To Link bmlinks.com Account To This Bot.
+
 💁‍♀️ Hit 👉 /help To Get Help.
-➕ Hit 👉 /add Command To Get Help About Adding your channel to bot.
+
+➕ Hit 👉 /header To Get Help About Adding your Custom Footer to bot.
+
 ➕ Hit 👉 /footer To Get Help About Adding your Custom Footer to bot.
+
+➕ Hit 👉 /username To replace username to your username in post.
+
+💁‍♀️ Hit 👉 /me To know your settings.
 """
 
 HELP_MESSAGE = """Hey there! My name is {firstname} and I'm a link convertor and shortener bot here to make your work easier and help you earn more 💰.
@@ -66,7 +71,7 @@ METHOD_MESSAGE = """
 Current Method: {method}
     
 
-> `shortener` - Short all the links of the post to {shortener} link directly
+> `shortener` - Short all the links of the post to bmlinks.com link directly
     
 """
 
