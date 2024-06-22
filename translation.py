@@ -11,14 +11,24 @@ For example: <code>/batch -100xxx</code>
 I'll handle the rest and get those links shortened or converted in a short time! 💪
 """
 
-START_MESSAGE = """Hi there {} 
+START_MESSAGE = """I am bmlinks.com , Bulk Link Converter. I Can Convert Links Directly From Your bmlinks.com Account,
+    
+1. Go To 👉 https://bmlinks.com/member/tools/api?connect=true
+🤗 Than Hit Start If You're Redirected To Bot.
+Other Ways👇
+2. Than Copy API Key
+3. Than Type /api than give a single space and than paste your API Key (see example to understand more...)
 
-Send me a link or post and I'll shorten it for you!
+/api<space>API Key 
+(See Example.👇)
+Example:
+/api ba1d11dd859451cf34cf026861f9debc181019d2 
 
-To learn more about what I can do, just type /help.
-
-Method: {}
-Shortener website: {}
+🤘 Hit 👉 /features To Know More Features Of This Bot.
+🔗 Hit 👉 /link To Know More About How To Link bmlinks.com Account To This Bot.
+💁‍♀️ Hit 👉 /help To Get Help.
+➕ Hit 👉 /add Command To Get Help About Adding your channel to bot.
+➕ Hit 👉 /footer To Get Help About Adding your Custom Footer to bot.
 """
 
 HELP_MESSAGE = """Hey there! My name is {firstname} and I'm a link convertor and shortener bot here to make your work easier and help you earn more 💰.
